@@ -1,3 +1,5 @@
+-- DDL file to build database tables
+
 DROP TABLE IF EXISTS users CASCADE;
 DROP TABLE IF EXISTS reservations CASCADE;
 DROP TABLE IF EXISTS property_reviews CASCADE;
