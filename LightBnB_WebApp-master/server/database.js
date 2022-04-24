@@ -2,6 +2,7 @@ const properties = require('./json/properties.json');
 const users = require('./json/users.json');
 const {Pool} = require('pg');
 
+// Connect to database
 const pool = new Pool({
   user: 'veersingh',
   password: '123',
@@ -152,8 +153,8 @@ const getAllProperties = function(options, limit = 10) {
     queryParams.push(`${options.maximum_price_per_night * 100}`);
     queryString += `AND cost_per_night <= $${queryParams.length} `;
   }
-  
-  //Group by before HAVING
+    
+  //Group by before HAVING clause
   queryString += `GROUP BY properties.id `;
 
   //"HAVING" clause to search using aggregate function
